@@ -1,0 +1,6 @@
+[Notas de version]
+
+Version 0.0.1 01/09/2011
+
+- Confeccionar la libreria Common
+- Clase Entry para funciones de ingreso al sistema
