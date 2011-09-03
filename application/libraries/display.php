@@ -1,6 +1,6 @@
 <?php
 class Display
-{
+{   
     function __construct() 
     {
         $this->CI = & get_instance();
@@ -19,7 +19,8 @@ class Display
     
     function topnav()
     {
-        $datos_top = array('version' => '0.1', 'juego' => 'Moon');
+        $datos_top = $this->CI->common->getInfo();
+        $datos_top->juego = "Moon of blood";
         
         return $datos_top;
     }

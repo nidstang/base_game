@@ -21,5 +21,11 @@ class Common
     {
         return date("h:i:s A");
     }
+    
+    function getInfo()
+    {
+        $datos = $this->CI->db->get_where('users', array('md5name' => $this->getUser()));
+        return $datos->row();
+    }
 }
 ?>

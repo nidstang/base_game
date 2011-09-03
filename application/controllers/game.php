@@ -6,12 +6,14 @@ class Game extends CI_Controller
 {
     
      public $CurrentUser;
+     public $datos;
 	
 	function __construct()
 	{
 		parent::__construct();
           //inicializamos variables en el controlador
           $this->CurrentUser = $this->common->getUser();
+          $this->datos = $this->common->getInfo();
 	}
 	
 	function index()
@@ -21,7 +23,7 @@ class Game extends CI_Controller
      
      function visiongeneral()
      {
-         $data = array('nombre' => 'Moon of Blood', 'hora_servidor' => Common::time());
+         $data = array('nombre' => 'Vision general', 'hora_servidor' => Common::time());
          
          $this->display->assign('visiongeneral_view', $data);
          
@@ -75,7 +77,8 @@ class Game extends CI_Controller
      
      function prueba()
      {
-         echo $this->CurrentUser;
+         echo $this->CurrentUser ."<br>";
+         echo $this->datos->name;
      }
 }
 

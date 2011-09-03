@@ -1,4 +1,4 @@
 <html>
     <body>
-        <p>Esto es el topnav {version} {juego}</p>
+        <p>Esto es el topnav {juego}, usuario actual {name} nivel: {lvl}</p>
 
