@@ -75,7 +75,7 @@ class Game extends CI_Controller
          redirect('index');
      }
      
-     function prueba()
+     function current()
      {
          echo $this->CurrentUser ."<br>";
          echo $this->datos->name;

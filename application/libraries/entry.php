@@ -15,7 +15,7 @@ class Entry
         if($login->num_rows()>0)
         {
             $this->CI->session->sess_destroy();
-            $this->CI->session->set_userdata(array('login' => TRUE, 'name_session' => $login->row()->md5name));
+            $this->CI->session->set_userdata(array('login' => TRUE, 'name_session' => $login->row()->sha1name));
             redirect('game');
         }
         else
@@ -26,10 +26,47 @@ class Entry
        
     }
     
-    function registro()
+    function registro($username, $password, $email, $race)
     {
         //ingresamos los datos del nuevo usuario en la BD
-        return $this->CI->db->insert('users', $_POST);
+        
+        $namesha1 = sha1($username);
+        
+        $datasNewUser = array(
+                        'name' => $username,
+                        'sha1name' => $namesha1,
+                        'pass' => $password,
+                        'mail' => $email,
+                        'race' => $race
+        );
+        
+        return $this->CI->db->insert('users', $datasNewUser);
+    }
+    
+    function validateUser($user)
+    {
+        $query = $this->CI->db->get_where('users', array('name' => $user));
+        if($query->num_rows()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    function validateMail($mail)
+    {
+        $query = $this->CI->db->get_where('users', array('mail' => $mail));
+        if($query->num_rows()>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 

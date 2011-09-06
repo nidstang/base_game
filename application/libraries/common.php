@@ -24,7 +24,7 @@ class Common
     
     function getInfo()
     {
-        $datos = $this->CI->db->get_where('users', array('md5name' => $this->getUser()));
+        $datos = $this->CI->db->get_where('users', array('sha1name' => $this->getUser()));
         return $datos->row();
     }
 }
