@@ -1,16 +1,51 @@
-[Notas de version]
+[Notas de versión]
 
-Version 0.0.2 (ALPHA 1) 03/09/2011
+Versión 0.1.1 (ALPHA 2) 07/09/2011
 
--Login (100%)
--Registro (10%)
--Common (50%)
--Changelog (100%)
--Sistema de Templates (80%)
--Vision general (5%)
+- Registro (100%)
+- Common (40%)
+- Sistema de Templates (80%)
+- Visión General (5%)
+- TopNav (5%)
 
-Version 0.0.1 01/09/2011
+Versión 0.0.2 (ALPHA 1) 03/09/2011
 
--Common (20%)
--Changelog (0%)
--Sistema de Templates (40%)
+- Login (100%)
+- Registro (10%)
+- Common (50%)
+- Changelog (100%)
+- Sistema de Templates (80%)
+- Vision general (5%)
+
+Versión 0.0.1 (Subversion) 01/09/2011
+
+- Common (20%)
+- Changelog (0%)
+- Sistema de Templates (40%)
+
+
+----------------------------------------------------------------
+
+[Lista de cambios (Changelog)]
+
+Versión 0.1.1 (ALPHA 2) 07/09/2011
+
+- Terminado el registro
+- Desde el sistema de templates (libreria Display) se obtienen los datos del topnav y footer
+- Implementado sistema de encriptado sha1 para login y registro
+- Activado la encriptacion de las cookies desde las opciones de CI
+- Desde el Common se obtiene el CurrentUser
+- Ahora desde el Common se extraen los datos del CurrentUser
+
+Versión 0.0.2 (ALPHA 1) 03/09/2011
+
+- Terminado el Login, el logout y el sistema de sesiones
+- Implementadas las validaciones en el registro
+- Se termino el Changelog (que sera presentado en versiones siguientes)
+- Se comenzo a implementar la vision general, en su ambito grafico
+
+Versión 0.0.1 (Subversion) 01/09/2011
+
+- Comienzo oficial del desarrollo (By Poltero)
+- Instalacion limpia de CI
+- Creación de librerias basicas
