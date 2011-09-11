@@ -10,7 +10,19 @@
 |
 */
 
+$hook['post_controller_constructor'][] = array(
+            'class' => 'Access',
+            'function' => 'identified',
+            'filename' => 'Access.php',
+            'filepath' => 'hooks'
+);
 
+$hook['post_controller_constructor'][] = array(
+            'class' => 'Access',
+            'function' => 'languages',
+            'filename' => 'Access.php',
+            'filepath' => 'hooks'
+);
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */

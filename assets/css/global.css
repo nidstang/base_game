@@ -1,0 +1,37 @@
+/* 
+    Document   : global
+    Created on : 10-sep-2011, 18:08:34
+    Author     : Pableum
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+body{
+    font-family : Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+}
+
+#ingles{
+    background: url(../img/eeuu.png);
+    width: 48px;
+    height: 48px;
+    float: left;
+}
+#espaniol{
+    background: url(../img/spain.png);
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin-left: 5px;
+}
+.error_login{
+    color: red;
+}
+

@@ -1,9 +1,19 @@
 [Notas de versión]
 
+Version 0.2 (ALPHA 3) 11/09/2011
+
+- Common (60%)
+- Sistema de Templates (85%)
+- Vision General (20%)
+- TopNav (25%)
+- Sistema Multilenguaje (90%)
+- Diseño (1%)
+- Opciones (10%)
+
 Versión 0.1.1 (ALPHA 2) 07/09/2011
 
 - Registro (100%)
-- Common (40%)
+- Common (50%)
 - Sistema de Templates (80%)
 - Visión General (5%)
 - TopNav (5%)
@@ -12,7 +22,7 @@ Versión 0.0.2 (ALPHA 1) 03/09/2011
 
 - Login (100%)
 - Registro (10%)
-- Common (50%)
+- Common (40%)
 - Changelog (100%)
 - Sistema de Templates (80%)
 - Vision general (5%)
@@ -27,6 +37,13 @@ Versión 0.0.1 (Subversion) 01/09/2011
 ----------------------------------------------------------------
 
 [Lista de cambios (Changelog)]
+
+Version 0.2 (ALPHA 3) 11/09/2011
+
+- Implementado sistema multi-idioma para juego, login y registro
+- Empezada la sección de Opciones
+- Cambio de idioma desde opciones (español e ingles)
+- Adelantos para otras secciones
 
 Versión 0.1.1 (ALPHA 2) 07/09/2011
 

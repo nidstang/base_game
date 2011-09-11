@@ -1,6 +1,9 @@
 <?php
 /**
 * Controlador de Login y registro
+ * 
+ * @author Poltero
+ * @package Moon of Blood
 */
 class Index extends CI_Controller
 {	
@@ -8,30 +11,42 @@ class Index extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper(array('form', 'url'));
-          $this->load->library('form_validation');
+    $this->load->library('form_validation');
 	}
 	
-	function index($success='')
+	function login($lang=null)
 	{    
-          $success = str_replace('_', ' ', $success);
-          $data = array('error' => '', 'suceso' => $success);
+          $data = array(
+              'error' => '',
+              'name_player' => $this->lang->line('name_player'),
+              'password_player' => $this->lang->line('password_player'),
+              'enter' => $this->lang->line('enter')
+              );
+          
+          if($lang != null)
+          {
+              $this->session->sess_destroy();
+              $this->session->set_userdata(array('idioma' => $lang));
+              redirect('index/login');
+          }
 
 		$this->form_validation->set_rules('nombre', 'Nombre','required');
 		$this->form_validation->set_rules('pass', 'Password', 'required|sha1');
 		
 		$this->form_validation->set_message('required', "");
 		
-		if ($this->form_validation->run() == FALSE)
+		if($this->form_validation->run() == FALSE)
 		{
 			$this->parser->parse('login_view', $data);
 		}
 		else
 		{
-			$login = $this->entry->login($this->input->post('nombre'), $this->input->post('pass'));
-               if($login==FALSE){
-                   $data['error'] = 'Usuario o Pass inconrrectos';
-                   $this->parser->parse('login_view', $data);
-               }
+			 $login = $this->entry->login($this->input->post('nombre'), $this->input->post('pass'));
+       if($login==FALSE)
+       {
+           $data['error'] = $this->lang->line('error_login');
+           $this->parser->parse('login_view', $data);
+       }
 		}
 	}
      
@@ -56,7 +71,7 @@ class Index extends CI_Controller
 		else
 		{
 			$this->entry->registro($this->input->post('nombre'),$this->input->post('pass'),$this->input->post('email'),$this->input->post('race'));
-               redirect('index/index/Registro_completado');
+               redirect('index/index');
 		}
 	}
      

@@ -15,7 +15,7 @@ class Entry
         if($login->num_rows()>0)
         {
             $this->CI->session->sess_destroy();
-            $this->CI->session->set_userdata(array('login' => TRUE, 'name_session' => $login->row()->sha1name));
+            $this->CI->session->set_userdata(array('login' => TRUE, 'name_session' => $login->row()->sha1name, 'idioma' => $login->row()->lang));
             redirect('game');
         }
         else
@@ -32,7 +32,7 @@ class Entry
         
         $namesha1 = sha1($username);
         
-        $datasNewUser = array(
+        $dataNewUser = array(
                         'name' => $username,
                         'sha1name' => $namesha1,
                         'pass' => $password,
@@ -40,7 +40,7 @@ class Entry
                         'race' => $race
         );
         
-        return $this->CI->db->insert('users', $datasNewUser);
+        return $this->CI->db->insert('users', $dataNewUser);
     }
     
     function validateUser($user)
